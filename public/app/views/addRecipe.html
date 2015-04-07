@@ -1,0 +1,205 @@
+<div ng-init="main.setIndex(10)">
+    <div class="row">
+        <div class="col-xs-12">
+            <p>&nbsp;</p> <!-- need to add padding here -->
+            <form name="frm" ng-submit="submitData()">
+                <h2>Create a Recipe</h2>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <label>Recipe Name</label>
+                        <input type="text" name="recipeName" ng-model="newRecipe.name" class="form-control" placeholder="Recipe name" required>
+                        <span ng-show="frm.recipeName.$dirty && frm.recipeName.$error.required">Enter a name for the recipe.</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" ng-click="recipeHelper.recipeName=!recipeHelper.recipeName">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-show="recipeHelper.recipeName"></span>
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true" ng-hide="recipeHelper.recipeName"></span>
+                                <span>Recipe Name</span>
+                            </div>
+                            <div class="panel-body" ng-hide="recipeHelper.recipeName">
+                                <span class="help-block">
+                                    <ul class="list-unstyled">
+                                        <li>Include name of dish or main ingredients.</li>
+                                        <li>Be creative but concise.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-8">
+                        <label>Description</label>
+                        <textarea name="recipeDescription" ng-model="newRecipe.description" placeholder="Description" class="form-control" rows="5" required />
+                        <span ng-show="frm.recipeDescription.$dirty && frm.recipeDescription.$error.required">Enter a description for your recipe.</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" ng-click="recipeHelper.recipeDescription=!recipeHelper.recipeDescription">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-show="recipeHelper.recipeDescription"></span>
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true" ng-hide="recipeHelper.recipeDescription"></span>
+                                <span>Description</span>
+                            </div>
+                            <div class="panel-body" ng-hide="recipeHelper.recipeDescription">
+                                <span class="help-block">
+                                    <ul class="list-unstyled">
+                                        <li>A short description of the dish.</li>
+                                        <li>Be creative but concise.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label for="mainCat">Main Category</label>
+                        <select class="form-control" ng-model="newRecipe.mainCat" name="mainCat" required>
+                            <option>Breakfast</option>
+                            <option>Lunch</option>
+                            <option>Dinner</option>
+                            <option>Appetizer</option>
+                            <option>Dessert</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4">
+                        <label> Sub Category</label>
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><input type="checkbox" name="bbq" value="bbq" ng-model="subCat.bbq">BBQ</li>
+                                        <li><input type="checkbox" name="beef" value="beef" ng-model="subCat.beef">Beef</li>
+                                        <li><input type="checkbox" name="drinks" value="drinks" ng-model="subCat.drinks">Drinks</li>
+                                        <li><input type="checkbox" name="bread" value="bread" ng-model="subCat.bread">Bread</li>
+                                        <li><input type="checkbox" name="cakes" value="cakes" ng-model="subCat.cakes">Cakes</li>
+                                        <li><input type="checkbox" name="chicken" value="chicken" ng-model="subCat.chicken">Chicken</li>
+                                        <li><input type="checkbox" name="cookies" value="cookies" ng-model="subCat.cookies">Cookies</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><input type="checkbox" name="italian" value="italian" ng-model="subCat.italian">Italian</li>
+                                        <li><input type="checkbox" name="mainDish" value="mainDish" ng-model="subCat.mainDish">Main Dish</li>
+                                        <li><input type="checkbox" name="mexican" value="mexican" ng-model="subCat.mexican">Mexican</li>
+                                        <li><input type="checkbox" name="other" value="other" ng-model="subCat.other">Other</li>
+                                        <li><input type="checkbox" name="pasta" value="pasta" ng-model="subCat.pasta">Pasta</li>
+                                        <li><input type="checkbox" name="pork" value="pork" ng-model="subCat.pork">Pork</li>
+                                        <li><input type="checkbox" name="salad" value="salad" ng-model="subCat.salad">Salad</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><input type="checkbox" name="sauce" value="sauce" ng-model="subCat.sauce">Sauce</li>
+                                        <li><input type="checkbox" name="seafood" value="seafood" ng-model="subCat.seafood">Seafood</li>
+                                        <li><input type="checkbox" name="sideDish" value="sideDish" ng-model="subCat.sideDish">Side Dish</li>
+                                        <li><input type="checkbox" name="slowCooker" value="slowCooker" ng-model="subCat.slowCooker">Slow Cooker</li>
+                                        <li><input type="checkbox" name="soups" value="soups" ng-model="subCat.soups">Soups and Stews</li>
+                                        <li><input type="checkbox" name="vegetarian" value="vegetarian" ng-model="subCat.vegetarian">Vegetarian</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-8">
+                        <label>Ingredients</label>
+                        <textarea name="ingredients" ng-model="ingredients" class="form-control" placeholder="Ex. 1 egg; 1 1/2 cups flour; 1 tsp salt" rows="5" required />
+                        <span ng-show="frm.ingredients.$dirty && frm.ingredients.$error.required">Please list recipe ingredients.</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" ng-click="recipeHelper.recipeIngredients=!recipeHelper.recipeIngredients">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-show="recipeHelper.recipeIngredients"></span>
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true" ng-hide="recipeHelper.recipeIngredients"></span>
+                                <span>Ingredients</span>
+                            </div>
+                            <div class="panel-body" ng-hide="recipeHelper.recipeIngredients">
+                                <span class="help-block">
+                                    <ul class="list-unstyled">
+                                        <li>List all ingredients in the dish seperated by a semicolon (;).</li>
+                                        <li>Explain how ingredients are prepared, i.e. shredded, minced...</li>
+                                        <li>Include amounts for each ingredient.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-8">
+                        <label>Directions</label>
+                        <textarea name="directions" ng-model="directions" class="form-control" rows="5" placeholder="Ex. Preheat oven to 425; Combine all ingredients in a large bowl and mix thoroughly; Pour in cake pan; Cook in oven for 35 minutes." required />
+                        <span ng-show="frm.directions.$dirty && frm.directions.$error.required">Please list the directions.</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" ng-click="recipeHelper.recipeDirections=!recipeHelper.recipeDirections">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-show="recipeHelper.recipeDirections"></span>
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true" ng-hide="recipeHelper.recipeDirections"></span>
+                                <span>Directions</span>
+                            </div>
+                            <div class="panel-body" ng-hide="recipeHelper.recipeDirections">
+                                <span class="help-block">
+                                    <ul class="list-unstyled">
+                                        <li>List each step seperated by a semicolon (;).</li>
+                                        <li>List steps by order in which they should be done.</li>
+                                        <li>Ensure to list cooking times, cooking temperatures, and any waiting time.</li>
+                                        <li>Be specific but keep it short.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-8">
+                        <label>Author Name</label>
+                        <input type="text" name="author" ng-model="newRecipe.author" class="form-control" required>
+                    </div>
+                    <div class="col-xs-4">
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label>Rating</label>
+                        <select class="form-control" ng-model="newRecipe.rating" name="rating" required>
+                            <option>1 Star</option>
+                            <option>2 Stars</option>
+                            <option>3 Stars</option>
+                            <option>4 Stars</option>
+                            <option>5 Stars</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-8">
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary" ng-disabled="frm.$invalid">Submit</button>
+                        <span ng-show="frm.$invalid">Missing: </span>
+                        <span ng-show="frm.recipeName.$invalid">Recipe name, </span>
+                        <span ng-show="frm.recipeDescription.$invalid">Description, </span>
+                        <span ng-show="frm.mainCat.$invalid">Main category, </span>
+                        <span ng-show="frm.subCat.$invalid">Sub category, </span>
+                        <span ng-show="frm.ingredients.$invalid">Ingredients, </span>
+                        <span ng-show="frm.directions.$invalid">Directions, </span>
+                        <span ng-show="frm.author.$invalid">Author name, </span>
+                        <span ng-show="frm.rating.$invalid">Rating, </span>
+                        <span ng-show="frm.$invalid"> please fix these to submit.</span>
+                    </div>
+                </div>
+            </form>
+            <p>&nbsp;</p> <!-- need to add padding here -->
+        </div>
+    </div>
+</div>

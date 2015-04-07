@@ -1,0 +1,89 @@
+Switch to from mongojs to mongoose
+
+Restructure the server file into multiple files to conform to MVC
+
+Create Login system
+	Should allow user to login to system with username / password
+	Once logged in, make sure the username persists through reload
+	Ensure usernames are unique during creation
+	Make sure addRecipe and recipeBox aren't visible to user until logged in
+	Create a heirarchy of Guest/User/Admin for all pages
+
+Finalize the Recipe object that is saved in the database
+	After the login is created, there should be no reason for this model to change again (aside from possible fuzzy search implementation)
+	Make sure all fields are implemented, and all dynamic data is applied correctly
+	Sanitize the input, in the controller and the server
+		controller should validate all form items are full
+		controller should also check for malicious code
+		server should ensure no malicious code is trying to be inserted
+		Server should also ensure all tags are present before saving to db
+
+Add way to upload image on the addRecipe page.
+	Should allow user to upload an image
+	Make sure image is an image file, don't want them uploading anything dangerous
+	Put image in specific folder on server
+	Create random name for image to avoid conflict
+	Add image name to the imgName field in the db
+
+Create carousel for main page
+	use bootstraps build in carousel feature
+
+Populate the recipes page
+	With the finished Recipe object, the recipe page needs completed
+	Should be able to display recipes by: Top rated / Most popular / Newest
+		Top rated is the average rating of the recipe
+		Most popular is ranked by number of people to comment
+		Newest is simply the newest in the category
+
+Create search functionality for the main and sub categories.
+	Should be straight forward with no need to implement fuzzy search
+	Need to format the results properly
+
+Fuzzy search algorithm for search page
+	When searching for an item by keyword, it should be done using fuzzy search
+	We want the results to be ordered by closest match
+	Create a new catalog for description and ingredients
+		break the description and ingredients up by word
+		when searching, search through the desired catalog, logging results
+		using the results, search the actual recipe caetalog and get the results for the user
+	create a fuzzy algorithm that takes in a search query and catalog to search
+	break the search query up by spaces, and perform a fuzy search on each
+	rank the results by number of keyword matches
+
+Edit Recipe
+	Allow user to edit a recipe that is already created
+	Should only work if that recipe was created by the user
+
+RecipeBox implementation
+	Allow user to save recipes to their recipe box
+	All user created recipes should be saved here automatically
+	Move createRecipe to the recipeBox, so that only authorized users can add recipe
+	Change createRecipe page to automatically pull user id into recipe data
+
+Create admin releated pages
+	Should be able to remove/edit recipes
+	Ability to remove users
+	Ability to create other admin ?
+	Ability to remove comments from recipes
+
+Create comment section on recipe view
+	When user is viewing recipe, they should be able to write a comment and rate the recipe
+	All input needs to be validated and sanitized
+	Comment should have the following: RecipeID, authorID, authorName, comment, rating, dateCreated
+	Creating comment should be disabled for guests
+	Allow only one comment per recipe per user.
+
+Add preview button for add recipe page
+	preview should open up modal and display the current recipe
+	should have a save and cancel button at bottom
+
+Fix navigation on mobile
+	When the site is loaded on mobile, the dropdown does not deselect when navigating to new page
+
+Cleanup console logs
+
+Validate all data coming into server 
+	recipe creation - make sure all fields are valid before inserting
+	other things, not sure on yet
+
+Publish site

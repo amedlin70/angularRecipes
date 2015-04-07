@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Load css, js is loaded at end of page -->
+		<link rel="stylesheet" href="data/css/bootstrap.min.css">
+		<link rel="stylesheet" href="data/css/magnific-popup.css">
+		<link rel="stylesheet" href="data/css/style.css">
+	</head>
+
+	<body ng-app="app" ng-controller="MainCtrl as main">
+		<div class="container bg-white">
+
+			<!--  Navigation -->
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			  <div class="container">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" ui-sref="home"><img src="data/images/AngularRecipes.png" width="35" height="35"></a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li ng-class="(main.index==0) ? 'active' : ''">
+			          <a ui-sref="home">Home</a>
+			        </li>
+			        <li ng-class="(main.index==1) ? 'active' : ''">
+			          <a ui-sref="search">Search</a>
+			        </li>
+			        <li ng-class="(main.index==2) ? 'active' : ''">
+			          <a ui-sref="receipeBox">Recipe Box</a>
+			        </li>
+			        <li id="projects" class="dropdown" ng-class="(main.recipeIndex==1) ? 'active' : ''">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+			            <li ng-class="(main.index==3) ? 'active' : ''">
+			              <a ui-sref="breakfast">Breakfast</a>
+			            </li>
+			            <li ng-class="(main.index==4) ? 'active' : ''">
+			              <a ui-sref="lunch">Lunch</a>
+			            </li>
+			            <li ng-class="(main.index==5) ? 'active' : ''">
+			              <a ui-sref="dinner">Dinner</a>
+			            </li>
+			            <li ng-class="(main.index==6) ? 'active' : ''">
+			              <a ui-sref="desserts">Desserts</a>
+			            </li>
+			            <li ng-class="(main.index==7) ? 'active' : ''">
+			              <a ui-sref="appetizers">Appetizers</a>
+			            </li>
+			          </ul>
+			        </li>
+			        <li ng-class="(main.index==8) ? 'active' : ''">
+			          <a ui-sref="popular">Popular</a>
+			        </li>
+			        <li ng-class="(main.index==9) ? 'active' : ''">
+			          <a ui-sref="home">Login</a>
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+
+
+			<!--  Main content -->
+			<div>
+				TEST PAGE
+			</div>
+		
+
+
+			<!--  Footer -->
+			<div id="site-footer" class="footer vcenter">
+				<div class="container-fluid">
+					<p class="pull-right">&#169;2015 Andrew Medlin</p>
+				</div>
+			</div>
+
+		</div>
+
+		<!--  Load Javascript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="data/js/bootstrap.min.js"></script>
+		<script src="data/js/jquery.magnific-popup.min.js"></script>
+
+
+		<!-- AngularJS -->
+		<script src="app/js/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.js"></script>
+		<script src="app/js/ui.router.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/controllers/mainModule.js"></script>
+
+	</body>
+</html>
+
+

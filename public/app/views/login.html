@@ -1,0 +1,33 @@
+<div ng-init="main.setIndex(9)">
+	<div class="col-xs-12 col-sm-6">
+		<form name="login" ng-submit="loginUser()">
+			&nbsp;
+			<div class="row">
+		        <div class="col-xs-8">
+		            <label>User Name</label>
+		            <input type="text" name="userName" ng-model="user.name" class="form-control" placeholder="User Name" required>
+		            <span ng-show="login.userName.$dirty && login.userName.$error.required">Enter your user name.</span>
+		        </div>
+		    </div>
+		    &nbsp;
+		    <div class="row">
+		        <div class="col-xs-8">
+		            <label>Password</label>
+		            <input type="password" name="password" ng-model="user.password" class="form-control" placeholder="Password" required>
+		            <span ng-show="login.password.$dirty && login.password.$error.required">Enter your password.</span>
+		        </div>
+		    </div>
+		    &nbsp;
+		    <div class="row">
+		    	<div class="col-xs-8">
+			    	<button class="btn btn-primary" ng-disabled="login.$invalid">Login</button>
+			    </div>
+		    </div>
+		    &nbsp;
+		</form>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		&nbsp;
+		<p>Not a member?  <a ui-sref="createAccount">Create account</a></p>
+	</div>
+</div>

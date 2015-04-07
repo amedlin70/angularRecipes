@@ -1,0 +1,54 @@
+<div ng-init="main.setIndex(9)">
+	<form name="createAccount" ng-submit="addAccount()">
+		&nbsp;
+		<div class="row">
+	        <div class="col-xs-8">
+	            <label>First Name</label>
+	            <input type="text" name="firstName" ng-model="newUser.firstName" class="form-control" placeholder="First Name" required>
+	            <span ng-show="createAccount.firstName.$dirty && createAccount.firstName.$error.required">Enter your first name.</span>
+	        </div>
+	    </div>
+		&nbsp;
+		<div class="row">
+	        <div class="col-xs-8">
+	            <label>Last Name</label>
+	            <input type="text" name="lastName" ng-model="newUser.lastName" class="form-control" placeholder="Last Name" required>
+	            <span ng-show="createAccount.lastName.$dirty && createAccount.lastName.$error.required">Enter your last name.</span>
+	        </div>
+	    </div>
+		&nbsp;
+		<div class="row">
+	        <div class="col-xs-8">
+	            <label>User Name</label>
+	            <input type="text" name="userName" ng-model="newUser.name" class="form-control" placeholder="User Name" required>
+	            <span ng-show="createAccount.userName.$dirty && createAccount.userName.$error.required">Enter your user name.</span>
+	        </div>
+	    </div>
+	    &nbsp;
+	    <div class="row">
+	        <div class="col-xs-8">
+	            <label>Password</label>
+	            <input type="password" name="password" ng-model="newUser.password" class="form-control" placeholder="Password" ng-minlength="5" ng-maxlength="10" required>
+	            <span ng-show="createAccount.password.$dirty && createAccount.password.$error.required">Enter your password.</span>
+	            <span ng-show="createAccount.password.$error.minlength">Password too short</span>
+	            <span ng-show="createAccount.password.$error.maxlength">Password too long</span>
+	        </div>
+	    </div>
+		&nbsp;
+		<div class="row">
+	        <div class="col-xs-8">
+	            <label>Email Address</label>
+	            <input type="email" name="email" ng-model="newUser.email" class="form-control" placeholder="Email address" required>
+	            <span ng-show="createAccount.email.$dirty && createAccount.email.$error.required">Enter your email address.</span>
+	            <span ng-show="createAccount.email.$error.email">Enter a vaild email address</span>
+	        </div>
+	    </div>
+	    &nbsp;
+	    <div class="row">
+	    	<div class="col-xs-8">
+		    	<button class="btn btn-primary" ng-disabled="createAccount.$invalid">Create Account</button>
+		    </div>
+	    </div>
+	    &nbsp;
+	</form>
+</div>

@@ -1,0 +1,15 @@
+<h3>Top 20 Popular Recipes</h3>
+<div class="row">
+	<div ng-repeat="recipe in main.myRecipes" class="col-md-2 col-sm-3 col-xs-4">
+	    <div class="thumbnail">
+	    	<a ui-sref="recipe({recipeID: '{{recipe._id}}'})">
+	        	<img class="img-responsive" ng-src="data/images/none.jpg" alt="{{recipe.name}}">
+	    	</a>
+		    <div class="caption">
+		    	<a ui-sref="recipe({recipeID: '{{recipe._id}}'})">
+			    	{{recipe.name}}
+			    </a>
+		    </div>
+		</div>
+	</div>
+</div>

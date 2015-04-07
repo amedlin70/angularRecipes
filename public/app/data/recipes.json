@@ -1,0 +1,132 @@
+[
+	{
+		"title" : "Ham and Cheese Sandwich",
+		"author" : "Andy",
+		"id" : 0,
+		"authorId" : 0,
+		"imgName" : "none",
+		"ingredients" : [
+		{
+			"ingredient" : "ham",
+			"quantity" : "1",
+			"measurement" : "slice"
+		},
+		{
+			"ingredient" : "cheese",
+			"quantity" : "1",
+			"measurement" : "slice"
+		},
+		{
+			"ingredient" : "bread",
+			"quantity" : "2",
+			"measurement" : "slices"
+		}],
+		"rating" : 4.1,
+		"description":"A ham and cheese sandwich, what did you expect",
+		"mainCategory" : "lunch",
+		"subCategory" : "sandwich",
+		"date" :1422075600000,
+		"directions" : [
+			{"step" : "Put cheese on one slice of bread."},
+			{"step" : "Put ham on top of the cheese"},
+			{"step" : "Put other slice of bread on top of ham"}]
+	},
+	{
+		"title" : "Grilled Cheese",
+		"author" : "Bob",
+		"id" : 1,
+		"authorId" : 1,
+		"imgName" : "none",
+		"ingredients" : [{
+			"ingredient" : "Butter",
+			"quantity" : "1",
+			"measurement" : "Tbsp"
+			},
+			{
+			"ingredient" : "Bread",
+			"quantity" : "2",
+			"measurement" : "Slices"
+			},
+			{
+			"ingredient" : "Cheese",
+			"quantity" : "1",
+			"measurement" : "Slice"
+			}],
+		"rating" : 3.25,
+		"description":"Basic grilled cheese sandwich",
+		"mainCategory" : "lunch",
+		"subCategory" : "sandwich",
+		"date" :1422075600000,
+		"directions" : [
+			{"step" : "Spread butter on one side of each slice of bread"},
+			{"step" : "Place a slice of bread butter down on hot skillet, add cheese and place other slice of bread butter up on top"},
+			{"step" : "Flip once the sandwich is a nice golden brown, cook other side till brown and remove from heat"},
+			{"step" : "Eat the sandwich"}]
+	},
+	{
+		"title" : "Tuna Sandwich",
+		"author" : "Andy",
+		"id" : 2,
+		"authorId" : 0,
+		"imgName" : "none",
+		"ingredients" : [
+		{
+			"ingredient" : "ham",
+			"quantity" : "1",
+			"measurement" : "slice"
+		},
+		{
+			"ingredient" : "ham",
+			"quantity" : "1",
+			"measurement" : "slice"
+		},
+		{
+			"ingredient" : "ham",
+			"quantity" : "1",
+			"measurement" : "slice"
+		}],
+		"rating" : "4.0",
+		"description":"A ham and cheese sandwich, what did you expect",
+		"mainCategory" : "lunch",
+		"subCategory" : "sandwich",
+		"date" :1422075600000,
+		"directions" : [
+			{"step" : "Put cheese on one slice of bread."},
+			{"step" : "Put ham on top of the cheese"},
+			{"step" : "Put other slice of bread on top of ham"},
+			{"step" : "Eat the sandwich"}]
+	},
+	{
+		"title" : "Penut Butter and Jelly Sandwich",
+		"author" : "Alvin",
+		"id" : 3,
+		"authorId" : 2,
+		"imgName" : "none",
+		"ingredients" : [
+		{
+			"ingredient" : "Penut Butter",
+			"quantity" : "1/2",
+			"measurement" : "cup"
+		},
+		{
+			"ingredient" : "Jelly (grape or other)",
+			"quantity" : "1/4",
+			"measurement" : "cup"	
+		},
+		{
+			"ingredient" : "Bread",
+			"quantity" : "2",
+			"measurement" : "slices"
+		}],
+		"rating" : "4.5",
+		"description":"Classic PB&J",
+		"mainCategory" : "lunch",
+		"subCategory" : "sandwich",
+		"date" :1422075600000,
+		"directions" : [
+			{"step" : "Put peanut butter on one slice of bread."},
+			{"step" : "Put jelly on one side of remaining slice of bread"},
+			{"step" : "Put the two slices of bread together, so that the jelly and the peanut butter meet"},
+			{"step" : "Eat the sandwich"}]
+	}
+]

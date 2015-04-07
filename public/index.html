@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Load css, js is loaded at end of page -->
+		<link rel="stylesheet" href="data/css/bootstrap.min.css">
+		<link rel="stylesheet" href="data/css/magnific-popup.css">
+		<link rel="stylesheet" href="data/css/style.css">
+	</head>
+
+	<body ng-app="app" ng-controller="MainCtrl as main">
+		
+		<!--  Navigation -->
+		<div ng-include src="'app/views/navigation.html'"></div>
+
+
+		<!--  Main content -->
+		<div class="container bg-white" style="height: 100%">
+			<ui-view></ui-view>
+		</div>	
+
+
+		<!--  Footer -->
+		<footer ng-include src="'app/views/footer.html'"></footer>
+
+		<!--  Load Javascript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="data/js/bootstrap.min.js"></script>
+		<script src="data/js/jquery.magnific-popup.min.js"></script>
+		<script src="data/js/script.js"></script>
+
+
+		<!-- AngularJS -->
+		<script src="app/js/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.js"></script>
+		<script src="app/js/ui.router.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/controllers/mainModule.js"></script>
+		<script src="app/controllers/recipeModule.js"></script>
+		<script src="app/controllers/addRecipeModule.js"></script>
+		<script src="app/controllers/recipesModule.js"></script>
+		<script src="app/controllers/loginModule.js"></script>
+
+	</body>
+</html>
+
+

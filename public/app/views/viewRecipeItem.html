@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="list-inline">
+					<li ng-repeat="item in recipeCtrl.recipePath"><a ui-sref={{item.link}}> {{item.name}}</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-4">
+	        	<img class="img-responsive" ng-src="data/images/{{recipeCtrl.recipe.imgName}}.jpg" alt="{{recipe.title}}">
+		    </div>
+		    <div class="col-md-8 col-sm-8 col-xs-8">
+			    <h3>{{recipeCtrl.recipe.name}}</h3>
+				<span class="stars"></span>
+			    <p>Recipe by {{recipeCtrl.recipe.author}}</p>
+			    <p>"{{recipeCtrl.recipe.description}}"</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h4>Ingredients</h4>
+				<ul class="list-unstyled">
+					<li ng-repeat="item in recipeCtrl.recipe.ingredients">{{item}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h4>Directions</h4>
+				<ol>
+					<li ng-repeat="step in recipeCtrl.recipe.directions">{{step}}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<h4>Reviews</h4>
+		<p>Coming Soon</p>
+	</div>
+</div>
