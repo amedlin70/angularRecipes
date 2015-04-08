@@ -46,7 +46,7 @@ angular.module('addRecipeModule', [])
 
 		sanitizeData();
 
-		$http.post('/addRecipe', $scope.newRecipe).success(function(response) {
+		$http.post('/recipe/addRecipe', $scope.newRecipe).success(function(response) {
 			console.log("response: ", response);
 			$location.path("/home");
 		});

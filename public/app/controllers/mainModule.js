@@ -32,10 +32,10 @@ angular.module('mainModule', [])
 
 	this.getData = function(){
 		var scope = this;
-		$http.get('app/data/recipes.json')
-  		.success(function(data) {
-   			scope.recipes = data;
-  		});
+		// $http.get('app/data/recipes.json')
+  // 		.success(function(data) {
+  //  			scope.recipes = data;
+  // 		});
 
         // Get 20 top recipes
         // $http.get('/topRecipes').success(function(data) {
@@ -45,13 +45,13 @@ angular.module('mainModule', [])
         });
 
         // Get 5 newest recipes
-        $http.get('/newRecipes').success(function(data) {
+        $http.get('/recipes/newest').success(function(data) {
             console.log("Getting 5 newest recipes");
             scope.newRecipes = data;
         });
 
         // Get 5 admin pick recipes
-        $http.get('/adminRecipes').success(function(data) {
+        $http.get('/recipes/adminRecipes').success(function(data) {
             console.log("Getting 5 admin pick recipes");
             scope.adminRecipes = data;
         });
