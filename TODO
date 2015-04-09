@@ -1,13 +1,11 @@
-Switch to from mongojs to mongoose
-
-Restructure the server file into multiple files to conform to MVC
-
-Create Login system
-	Should allow user to login to system with username / password
-	Once logged in, make sure the username persists through reload
+Finalize Login system
 	Ensure usernames are unique during creation
 	Make sure addRecipe and recipeBox aren't visible to user until logged in
 	Create a heirarchy of Guest/User/Admin for all pages
+
+Update the navbar to show user is logged in
+	Change login link to logout
+	Display User name on navbar? i.e. Hello, {{firstName}}.
 
 Finalize the Recipe object that is saved in the database
 	After the login is created, there should be no reason for this model to change again (aside from possible fuzzy search implementation)
