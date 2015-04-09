@@ -1,0 +1,27 @@
+&nbsp;
+<div class="row" ng-init="main.setIndex(2)">
+	<div class="col-xs-12">
+		&nbsp;
+		<button class="btn btn-default" ng-click="logout()">logout</button>
+	</div>
+	<div class="col-xs-12">
+		&nbsp;
+		<div class="panel panel-default" ng-repeat="recipe in recipes">
+			<div class="row">
+				<div class="col-xs-4 col-sm-2">
+					<a ui-sref="recipe({recipeID: '{{recipe._id}}'})">
+						<img class="img-responsive" ng-src="data/images/none.jpg">
+					</a>
+				</div>
+				<div class="col-xs-8 col-sm-10">
+					<ul class="list-unstyled">
+						<li><a ui-sref="recipe({recipeID: '{{recipe._id}}'})"><h4>{{recipe.name}}</h4></a></li>
+						<li>Rating: {{recipe.rating}}</li>
+						<li>Submitted by {{recipe.author}}</li>
+						<li>"{{recipe.description}}"</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

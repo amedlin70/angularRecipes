@@ -12,6 +12,7 @@ angular.module('loginModule', [])
 .controller('LoginCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 	$scope.user = "";
 	$scope.newUser = "";
+	$scope.showError = false;
 	
 	var sanitizeData = function() {
 
@@ -20,15 +21,28 @@ angular.module('loginModule', [])
 	$scope.loginUser = function() {
 		console.log('user', $scope.user);
 
-		$http.post('/login', $scope.user).success(function(response) {
+		$http.post('/user/login', $scope.user)
+		.success(function(response) {
 			console.log("response: ", response);
-			$location.path("/home");
-		});
+			$location.path("/recipeBox");
+		})
+		.error(function(response) {
+			console.log("response: ", response);
+			$scope.errorMsg = response;
+			$scope.showError = true;
+			// Set error status on page to response
+		});;
 	};
 
 	$scope.addAccount = function() {
 		console.log('newUser', $scope.newUser);
 
+		$http.post('/user/register', $scope.newUser)
+		.success(function(response) {
+			console.log("response: ", response);
+			$location.path("/home");
+			// $location.path("/recipeBox");
+		});
 	};
 }])
 

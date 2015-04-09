@@ -12,7 +12,8 @@ var recipeSchema = new Schema({
 	subCat: {},
 	rating: {type: Number, default: 5},
 	numRatings: {type: Number, default: 1},
-	totalRating: {type: Number, default: 5}
+	totalRating: {type: Number, default: 5},
+	imageName: {type: String, default: "none.jpg"}
 });
 
 recipeSchema.methods = {

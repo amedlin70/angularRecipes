@@ -1,15 +1,11 @@
-//client-sessions for session info
-//bcryptjs for hashing passwords
 //csurf for anti csrf attacks
-//
-//var sessions = require('client-sessions');
-//var bcrypt = require('bcryptjs');
 //var csrf = require('csurf');
 
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var sessions = require('client-sessions');
 
 // Connect to mongodb
 mongoose.connect('mongodb://localhost/recipe');
@@ -22,14 +18,15 @@ fs.readdirSync(models_path).forEach(function (filename) {
 
 var app = express();
 
+// Set up middleware
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-//app.use(session({
-//	cookieName: 'session',
-//	secret: 'lakaos1631nlknhi2340hidvniea',
-//	duration: 30 * 60 * 1000,
-//	activeDuration: 5 * 60 * 1000
-//}));
+app.use(sessions({
+	cookieName: 'session',
+	secret: 'lakaos1631nlknhi2340hidvniea',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000
+}));
 
 require('./app/config/routes')(app);
 

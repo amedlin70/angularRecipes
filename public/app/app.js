@@ -1,6 +1,6 @@
 /*Angular Modules take a name, best practice is lowerCamelCase, and a list of dependancies*/
 /*added the second module as a dependancy */
-angular.module('app', ['mainModule','recipeModule','addRecipeModule','recipesModule','loginModule','ngRoute','ui.router'])
+angular.module('app', ['mainModule','recipeModule','addRecipeModule','recipesModule','loginModule','recipeBoxModule','ngRoute','ui.router'])
 .config(['$urlRouterProvider','$stateProvider',
   function($urlRouterProvider,$stateProvider) {
 
@@ -34,6 +34,11 @@ angular.module('app', ['mainModule','recipeModule','addRecipeModule','recipesMod
           url: "/createAccount",
           controller: 'LoginCtrl as loginCtrl',
           templateUrl: 'app/views/createAccount.html'
+        })
+        .state("recipeBox", {
+          url: "/recipeBox",
+          controller: 'RecipeBoxCtrl as recipeBoxCtrl',
+          templateUrl: 'app/views/recipeBox.html'
         })
         $urlRouterProvider.otherwise('/home');
         $urlRouterProvider.when('', '/home');

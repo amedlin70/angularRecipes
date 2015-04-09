@@ -1,5 +1,6 @@
 module.exports = function (app) {
 	var recipes = require('../controllers/recipes');
+	var users = require('../controllers/users');
 	
 	// Recipe routes
 	app.post('/recipe/addRecipe', recipes.addRecipe);
@@ -12,7 +13,8 @@ module.exports = function (app) {
 	app.get('/recipes/:mainCat', recipes.findRecipesByCategory);
 	
 	// Login routes
-	// //app.post('/register', function(req, res));
-	// // app.post('/login', function(req, res));
-
+	app.post('/user/login', users.login);
+	app.post('/user/register', users.createUser);
+	app.get('/user/recipeBox', users.getRecipeBox);
+	app.get('/user/logout', users.logout);
 }
