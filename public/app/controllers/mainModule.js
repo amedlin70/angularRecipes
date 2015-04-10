@@ -32,13 +32,8 @@ angular.module('mainModule', [])
 
 	this.getData = function(){
 		var scope = this;
-		// $http.get('app/data/recipes.json')
-  // 		.success(function(data) {
-  //  			scope.recipes = data;
-  // 		});
 
         // Get 20 top recipes
-        // $http.get('/topRecipes').success(function(data) {
         $http.get('/recipes').success(function(data) {
             console.log("Getting top 20 recipes");
             scope.myRecipes = data;
@@ -65,11 +60,7 @@ angular.module('mainModule', [])
 .directive('popularRecipeItem', function () {
     return {
         restrict: 'E', //E = element, A = attribute, C = class, M = comment   
-        /*      
-        scope: {
-            //@ reads the attribute value, = provides two-way binding, & works with functions
-            title: '@'         },
-            */
+        
         templateUrl: 'app/views/popularRecipeItem.html',
        
         controller: function($scope){

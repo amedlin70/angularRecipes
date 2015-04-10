@@ -1,18 +1,34 @@
 var mongoose = require('mongoose');
 var Recipe = mongoose.model('Recipe');
+var User = mongoose.model('User');
 
 exports.addRecipe = function(req, res) {
-	// Verify req.body is valid before sending it to the model
-	console.log("Creating recipe: ", req.body);
-	
-	var recipe = new Recipe(req.body);
-	recipe.newRecipe(function(err) {
-		if(err) {
-			console.log("error: ", err);
-			return res.json("error creating recipe");
-		}
-		return res.json(recipe);
-	});
+	// Ensure user is logged in
+	if(req.session && req.session.user) {
+		User.getUser(req.session.user.name, function(err, user) {
+			if(!user) {
+				req.session.reset();
+				res.status(400);
+				return res.json("Please log in");
+			}
+			else {
+				var recipe = new Recipe(req.body);
+				recipe.newRecipe(function(err) {
+					if(err) {
+						console.log("error: ", err);
+						return res.json("error creating recipe");
+					}
+					else {
+						return res.json(recipe);
+					}
+				});
+			}	
+		});
+	}
+	else {
+		res.status(400);
+		return res.json("Please log in");	
+	}
 }
 
 exports.findRecipe = function(req, res) {

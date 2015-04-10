@@ -42,6 +42,10 @@ angular.module('loginModule', [])
 			console.log("response: ", response);
 			$location.path("/home");
 			// $location.path("/recipeBox");
+		})
+		.error(function(response) {
+			$scope.showError = true;
+			$scope.errorMsg = response;
 		});
 	};
 }])

@@ -4,7 +4,6 @@ var Recipe = mongoose.model('Recipe');
 var bcrypt = require('bcryptjs');
 
 exports.createUser = function(req, res) {
-	// Verify req.body is valid before sending it to the model
 	var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
 	var user = new User({
 		firstName: req.body.firstName,
@@ -17,10 +16,20 @@ exports.createUser = function(req, res) {
 
 	user.newUser(function(err) {
 		if(err) {
-			console.log("error: ", err);
-			return res.json("error creating user");
+			var errorMsg = "Something went wrong, please try again.";
+			// Check if username already exists
+			if(err.code === 11000) {
+				errorMsg = "Username already exists, please try another."
+			}
+			console.log("error: ", errorMsg);
+			res.status(400);
+			return res.json(errorMsg);
 		}
-		return res.json(user);
+		else {
+			// Set session cookie, and go to recipeBox
+			req.session.user = user;
+			return res.json(user);
+		}
 	});
 }
 
@@ -70,6 +79,12 @@ exports.getRecipeBox = function(req, res) {
 
 exports.logout = function(req, res) {
 	// Delete session information
-	req.session.reset();
-	return res.json(200);
+	console.log("Logging out user.");
+	if(req.session) {
+		req.session.reset();
+		res.redirect('/#/home');
+	}
+	else {
+		res.redirect('/#/home');
+	}
 }

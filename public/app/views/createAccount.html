@@ -1,6 +1,6 @@
 <div ng-init="main.setIndex(9)">
 	<form name="createAccount" ng-submit="addAccount()">
-		&nbsp;
+	    &nbsp;
 		<div class="row">
 	        <div class="col-xs-8">
 	            <label>First Name</label>
@@ -44,6 +44,11 @@
 	        </div>
 	    </div>
 	    &nbsp;
+	    <div class="row text-danger" ng-show="showError">
+		    	<div class="col-xs-8">
+			    	<p><strong>{{errorMsg}}</strong></p>
+			    </div>
+		    </div>
 	    <div class="row">
 	    	<div class="col-xs-8">
 		    	<button class="btn btn-primary" ng-disabled="createAccount.$invalid">Create Account</button>

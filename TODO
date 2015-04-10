@@ -1,11 +1,15 @@
-Finalize Login system
-	Ensure usernames are unique during creation
-	Make sure addRecipe and recipeBox aren't visible to user until logged in
-	Create a heirarchy of Guest/User/Admin for all pages
+Authorization system
+	Determine proper way to handle authorization using MEAN stack.
+	Prevent user from going to /#/addRecipe or /#/recipeBox until authenticated
+
+AddRecipe page
+	Remove username field from the view
+	Add user information from the session information on the server
 
 Update the navbar to show user is logged in
-	Change login link to logout
-	Display User name on navbar? i.e. Hello, {{firstName}}.
+	Change login link to logout once user is authenticated.
+	Display user name on navbar? i.e. Hello, {{firstName}}.
+	Move logout function from recipeBoxModule to mainModule, calling it from the navbar.
 
 Finalize the Recipe object that is saved in the database
 	After the login is created, there should be no reason for this model to change again (aside from possible fuzzy search implementation)
